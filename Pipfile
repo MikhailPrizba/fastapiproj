@@ -12,6 +12,9 @@ asyncpg = "*"
 uvicorn = "*"
 black = "*"
 gunicorn = "*"
+passlib = "*"
+python-jose = "*"
+
 [dev-packages]
 
 [requires]
