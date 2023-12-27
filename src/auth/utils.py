@@ -1,14 +1,13 @@
 import os
-from passlib.context import CryptContext
 from datetime import datetime, timedelta
-from typing import Union, Any
-from jose import jwt
+from typing import Any, Union
 
-ACCESS_TOKEN_EXPIRE_MINUTES = 30  # 30 minutes
-REFRESH_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7 # 7 days
-ALGORITHM = "HS256"
-JWT_SECRET_KEY = "narscbjim@$@&^@&%^&RFghgjvbdsha"   # should be kept secret
-JWT_REFRESH_SECRET_KEY = "13ugfdfgh@#$%^@&jkl45678902"
+from jose import jwt
+from passlib.context import CryptContext
+
+from config import (ACCESS_TOKEN_EXPIRE_MINUTES, ALGORITHM,
+                    JWT_REFRESH_SECRET_KEY, JWT_SECRET_KEY,
+                    REFRESH_TOKEN_EXPIRE_MINUTES)
 
 password_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
