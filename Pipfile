@@ -15,6 +15,7 @@ gunicorn = "*"
 passlib = "*"
 python-jose = "*"
 isort = "*"
+pyjwt = "*"
 
 [dev-packages]
 

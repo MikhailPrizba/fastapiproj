@@ -4,7 +4,6 @@ from .user import UserService
 from sqlalchemy.ext.asyncio import AsyncSession
 
 
-
 def provide_user_service(session: AsyncSession) -> UserService:
     """Providing user service."""
     user_repository = UserRepository(session)

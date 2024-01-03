@@ -9,8 +9,13 @@ from base import get_async_session
 
 from .models import TokenTable, User
 from .schemas import TokenCreate, TokenSchema, UserCreate, requestdetails
-from .utils import (create_access_token, create_refresh_token,
-                    get_hashed_password, verify_password)
+from .utils import (
+    create_access_token,
+    create_refresh_token,
+    get_hashed_password,
+    verify_password,
+)
+
 router = APIRouter(prefix="/users", tags=["Users"])
 
 
@@ -22,6 +27,7 @@ async def register_users(
     service = provide_user_service(session)
     user = await service.signup(user)
     return user
+
 
 @router.post("/login", response_model=TokenSchema)
 async def login(
